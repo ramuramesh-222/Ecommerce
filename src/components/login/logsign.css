@@ -1,0 +1,92 @@
+
+.inpu-form {
+    background: #1488CC;
+    background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+    background: linear-gradient(to right, #2B32B2, #1488CC);
+    border-radius: 50px;
+    height: 85vh;
+    margin: 25px ;
+    display: flex;
+    
+}
+.inpu-form-val{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.inpu-vector{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0px;
+}
+.inpu-vector img{
+    height: 100%;
+    border-radius: 40px;
+}
+.inpu-form-val form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inpu-form-val label {
+    color: white;
+}
+.inpu-form-val input::placeholder{
+    color: white;
+}
+.inpu-form-val input {
+    background-color: transparent;
+    outline: none;
+    width: 350px;
+    height: 40px;
+    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.616);
+    border-radius: 10px;
+    padding-left: 10px;
+    color: white;
+    margin: 10px 0px;
+
+}
+
+.inpu-form-val button {
+    border: none;
+    background: #f953c6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b91d73, #f953c6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b91d73, #f953c6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px 50px;
+    font-size: large;
+    color: white;
+    border-radius: 50px;
+    margin: 15px 0px;
+}
+.inpu-form-val button:hover{
+    background: #f953c6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #b91d73, #f953c6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #b91d73, #f953c6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+
+
+.inpu-vector img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+.inpu-vector img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
