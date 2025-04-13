@@ -14,6 +14,8 @@ function Header() {
                 <Link to={'/home'} className="ms-2 text-decoration-none text-reset"><div className='px-3 headdet' ><i className="fa-solid fa-house px-2"></i>Home</div></Link>
                 <Link to={'/login'} className="ms-2 text-decoration-none text-reset"><div className='px-3 headdet' ><i className="fa-solid fa-right-to-bracket px-2"></i>Login</div></Link>
                 <Link to={'/signup'} className="ms-2 text-decoration-none text-reset"><div className='px-3 headdet' ><i className="fa-solid fa-user-plus px-2"></i>SignUp</div></Link>
+                <Link to={'/editproducts'} className="ms-2 text-decoration-none text-reset"><div className='px-3 headdet' ><i className="fa-solid fa-user-plus px-2"></i>Products</div></Link>
+
                 <div className='px-3 headdet' ><i className="fa-solid fa-cart-shopping px-2"></i>Cart</div>
             </div>
         </div>

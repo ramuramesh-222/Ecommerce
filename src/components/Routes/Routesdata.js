@@ -10,6 +10,7 @@ import Categories from '../categories/categories';
 import Productsall from '../categories/productsall';
 import Login from '../login/login';
 import Signup from '../login/signup';
+import ProductsEdit from '../categories/productsEdit';
 
 function RoutesData() {
   return (
@@ -26,6 +27,9 @@ function RoutesData() {
                 <Route path='productall' element={<Productsall/>}/>
                 <Route path='login' element={<Login/>}/>
                 <Route path='signup' element={<Signup/>}/>
+                <Route path='editproducts' element={<ProductsEdit/>}/>
+
+                
             </Route>
         </Routes>
     </BrowserRouter>

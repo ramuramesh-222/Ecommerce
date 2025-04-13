@@ -1,27 +1,47 @@
 import React, { useState } from 'react'
 import './logsign.css'
 import sopImg from '../../asset/login.jpg'
+import { useNavigate } from 'react-router-dom'
 
 function Signup() {
   const [valuesignup, setValuesignup] = useState({ name: '', username: '', email: '', password: '' })
+  const navigate = useNavigate()
+  
   const signupvalue = (e) => {
     let name = e.target.name.trim()
     let value = e.target.value.trim()
 
     setValuesignup({ ...valuesignup, [name]: value })
   }
-  const submitsignup = (e) => {
-    e.preventDefault()
-    console.log(valuesignup);
 
-    // const user = { username: 'john_doe', email: 'john@example.com', password: 'pass123' };
-    fetch('https://fakestoreapi.com/users', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(valuesignup)
-    })
-      .then(response => response.json())
-      .then(data => console.log(data));
+
+  const submitsignup = async (e) => {
+    e.preventDefault();
+    const {name,username,email,password} = valuesignup;
+    if(!name||!username||!email||!password){
+      alert('Please fill in all inputs.');
+      return;
+    }
+    try{
+      const responce = await fetch('https://fakestoreapi.com/users',{
+        method:'POST',
+        headers : {'Content-Type': 'application/json'},
+        body : JSON.stringify(valuesignup),
+      });
+
+      const data = await responce.json();
+
+      if(data && data.id){
+        alert('register successfully')
+        navigate('/login')
+      }else{
+        alert('something wrong try again')
+      } 
+    }catch(err){
+      console.error(err.message)
+      
+    }
+
   }
 
   return (
