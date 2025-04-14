@@ -24,9 +24,7 @@ function Categories() {
     }, [])
     return (
         <>
-        <div className='saleimg'>
-            <img src={Saleimg}/>
-        </div>
+        
             <div className='d-flex justify-content-center gap-4 my-4 '>
                 {categorielist.map((v, i) => {
                     return <Link key={i} className='linknavi' to={`/${v}`}>
@@ -37,6 +35,10 @@ function Categories() {
                         </div></Link>
                 })}
             </div>
+
+            <div className='saleimg'>
+            <img src={Saleimg}/>
+        </div>
         </>
     )
 }
