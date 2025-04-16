@@ -1,14 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ProductSearchContext } from '../context/context';
+import { productSerch } from '../context/context';
 
 function Productsall() {
-    const [product, setProduct] = useState([])
-    const { inputData } = useContext(ProductSearchContext);
+    const [product, setProduct] = useState([]);
+    const { serchinpu } = useContext(productSerch);
 
-    const filtered = product.filter(product =>
-        product.title.toLowerCase().includes(inputData.toLowerCase())
-      );
+    const filtered = product.filter((product) =>
+        product.title.toLowerCase().includes(serchinpu.toLowerCase()) ||
+        product.price.toString().includes(serchinpu)
+    )
+
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -31,12 +33,11 @@ function Productsall() {
 
                 </ul>
             </div>
-            <h1>hello {inputData}</h1>
             <div className='d-flex productall flex-wrap gap-4 justify-content-center '>
                 {filtered.map((v, i) => {
                     return (
-                        <Link to={`/${v.id}`}  className="ms-2 text-decoration-none text-reset">
-                            <div className='productall_child' key={i}>
+                        <Link to={`/${v.id}`} className="ms-2 text-decoration-none text-reset" key={i}>
+                            <div className='productall_child' >
                                 <img src={v.image} />
                                 <p className='text-truncate' style={{ width: '200px' }} > {v.title}</p>
                                 <h6><span className='star'>{v.rating.rate}<i className="fa-solid fa-star"></i></span><span className='text-secondary'>({v.rating.count})</span></h6>

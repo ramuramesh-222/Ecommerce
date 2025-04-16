@@ -1,15 +1,36 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react"
 
-export const ProductSearchContext = createContext();
+export const productSerch = createContext(null)
 
-const ProductSearchProvider = ({ children }) => {
-  const [inputData, setInputData] = useState('');
+function ProductSearchProvider({children}) {
+
+  const[serchinpu,setSerchinpu]=useState('')
 
   return (
-    <ProductSearchContext.Provider value={{ inputData, setInputData }}>
-      {children}
-    </ProductSearchContext.Provider>
-  );
-};
+      <productSerch.Provider value={{serchinpu,setSerchinpu}}>
+        {children}
+      </productSerch.Provider>
+  )
+}
+export default ProductSearchProvider
 
-export default ProductSearchProvider;
+
+
+
+
+
+// import React, { createContext, useState } from 'react';
+
+// export const ProductSearchContext = createContext();
+
+// const ProductSearchProvider = ({ children }) => {
+//   const [inputData, setInputData] = useState('');
+
+//   return (
+//     <ProductSearchContext.Provider value={{ inputData, setInputData }}>
+//       {children}
+//     </ProductSearchContext.Provider>
+//   );
+// };
+
+// export default ProductSearchProvider;

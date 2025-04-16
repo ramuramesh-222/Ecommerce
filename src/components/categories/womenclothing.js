@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './categories.css'
 import { Link } from 'react-router-dom'
+import { productSerch } from '../context/context'
 
 function Womenclothing() {
     const [womenc, setWomenc] = useState([])
@@ -9,6 +10,14 @@ function Womenclothing() {
             .then((res) => res.json())
             .then((json) => setWomenc(json))
     }, [])
+    
+    const {serchinpu} = useContext(productSerch);
+
+    const filtered = womenc.filter((product)=>
+        product.title.toLowerCase().includes(serchinpu.toLowerCase()) ||
+        product.price.toString().includes(serchinpu)
+    )
+
     return (
         <>
             <div className='sm-nav'>
@@ -22,10 +31,10 @@ function Womenclothing() {
                 </ul>
             </div>
             <div className='d-flex productall flex-wrap gap-4 justify-content-center '>
-                {womenc.map((v, i) => {
+                {filtered.map((v, i) => {
                     return (
-                        <Link to={`/${v.id}`}  className="ms-2 text-decoration-none text-reset">
-                            <div className='productall_child' key={i}>
+                        <Link to={`/${v.id}`}  className="ms-2 text-decoration-none text-reset" key={i}>
+                            <div className='productall_child' >
                                 <img src={v.image} />
                                 <p className='text-truncate' style={{ width: '200px' }} > {v.title}</p>
                                 <h6><span className='star'>{v.rating.rate}<i className="fa-solid fa-star"></i></span><span className='text-secondary'>({v.rating.count})</span></h6>

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './categories.css'
 import { Link } from 'react-router-dom'
+import { productSerch } from '../context/context'
 
 
 function Menclothing() {
@@ -10,6 +11,14 @@ function Menclothing() {
             .then((res) => res.json())
             .then((json) => setMenc(json))
     }, [])
+
+    const{serchinpu}=useContext(productSerch);
+
+    const filtered = menc.filter((product)=>
+        product.title.toLowerCase().includes(serchinpu.toLowerCase()) ||
+        product.price.toString().includes(serchinpu)
+    )
+
     return (
         <>
             <div className='sm-nav'>
@@ -23,7 +32,7 @@ function Menclothing() {
                 </ul>
             </div>
             <div className='d-flex productall flex-wrap gap-4 justify-content-center '>
-                {menc.map((v, i) => {
+                {filtered.map((v, i) => {
                     return (
                         <Link to={`/${v.id}`}  className="ms-2 text-decoration-none text-reset">
                         <div className='productall_child' key={i}>

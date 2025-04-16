@@ -3,18 +3,19 @@ import './header.css'
 import LOGO from '../../asset/logo.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
-import { ProductSearchContext } from '../context/context';
+import { productSerch } from '../context/context';
 
 
 function Header() {
-    const { inputData, setInputData } = useContext(ProductSearchContext);
+    // const { inputData, setInputData } = useContext(ProductSearchContext);
 
+    const { serchinpu,setSerchinpu } = useContext(productSerch)
     return (
         <>
             <div className='d-flex justify-content-between align-items-center header'>
                 <img src={LOGO} alt='log_img' />
  
-                    <input type='serch' placeholder='Search the products' onChange={(e)=>setInputData(e.target.value)} />
+                    <input type='serch' placeholder='Search the products' onChange={(e)=>setSerchinpu(e.target.value)} />
 
                 <div className='d-flex'>
                     <Link to={'/home'} className="ms-2 text-decoration-none text-reset"><div className='px-3 headdet' ><i className="fa-solid fa-house px-2"></i>Home</div></Link>

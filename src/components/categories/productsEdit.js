@@ -42,7 +42,7 @@ function ProductsEdit() {
         let name = e.target.name
         let value = e.target.value
         setAddInput({...addInput,[name]:value})
-    }
+    } 
 // add products:
     const inputSubmit = async()=>{
         await fetch('https://fakestoreapi.com/products',{
