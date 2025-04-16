@@ -25,7 +25,7 @@ function Categories() {
     return (
         <>
         
-            <div className='d-flex justify-content-center gap-4 my-4 '>
+            {categorielist.length > 0 ?<div className='d-flex justify-content-center gap-4 my-4 '>
                 {categorielist.map((v, i) => {
                     return <Link key={i} className='linknavi' to={`/${v}`}>
                         <div className='categoriecart'>
@@ -34,7 +34,7 @@ function Categories() {
                             <p className='text-truncate text-uppercase' style={{ width: '110px' }}>{v}</p>
                         </div></Link>
                 })}
-            </div>
+            </div>:<h1 style={{textAlign:'center'}}>Loading...</h1>}
 
             <div className='saleimg'>
             <img src={Saleimg}/>

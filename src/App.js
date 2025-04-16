@@ -4,7 +4,7 @@ import RoutesData from './components/Routes/Routesdata';
 function App() {
   return (
     <div className="App">
-      <RoutesData/>
+        <RoutesData />
     </div>
   );
 }

@@ -13,27 +13,25 @@ import Signup from '../login/signup';
 import ProductsEdit from '../categories/productsEdit';
 
 function RoutesData() {
-  return (
-    <BrowserRouter>
-        <Routes>
-            <Route path='/' element={<Layout/>}>
-                <Route index element={<Categories/>}/>
-                <Route path='/home' element={<Categories/>}/>
-                <Route path='/:id' element={<Productshow/>}/>
-                <Route path='electronics' element={<Electronics/>}/>
-                <Route path='jewelery' element={<Jewelery/>}/>
-                <Route path="men's clothing" element={<Menclothing/>}/>
-                <Route path="women's clothing" element={<Womenclothing/>}/>
-                <Route path='productall' element={<Productsall/>}/>
-                <Route path='login' element={<Login/>}/>
-                <Route path='signup' element={<Signup/>}/>
-                <Route path='editproducts' element={<ProductsEdit/>}/>
-
-                
-            </Route>
-        </Routes>
-    </BrowserRouter>
-)
+    return (
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Layout />}>
+                        <Route index element={<Categories />} />
+                        <Route path='/home' element={<Categories />} />
+                        <Route path='/:id' element={<Productshow />} />
+                        <Route path='electronics' element={<Electronics />} />
+                        <Route path='jewelery' element={<Jewelery />} />
+                        <Route path="men's clothing" element={<Menclothing />} />
+                        <Route path="women's clothing" element={<Womenclothing />} />
+                        <Route path='productall' element={<Productsall />} />
+                        <Route path='login' element={<Login />} />
+                        <Route path='signup' element={<Signup />} />
+                        <Route path='editproducts' element={<ProductsEdit />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+    )
 }
 
 export default RoutesData

@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ProductSearchContext } from '../context/context';
 
 function Productsall() {
     const [product, setProduct] = useState([])
+    const { inputData } = useContext(ProductSearchContext);
 
-
+    const filtered = product.filter(product =>
+        product.title.toLowerCase().includes(inputData.toLowerCase())
+      );
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -27,8 +31,9 @@ function Productsall() {
 
                 </ul>
             </div>
+            <h1>hello {inputData}</h1>
             <div className='d-flex productall flex-wrap gap-4 justify-content-center '>
-                {product.map((v, i) => {
+                {filtered.map((v, i) => {
                     return (
                         <Link to={`/${v.id}`}  className="ms-2 text-decoration-none text-reset">
                             <div className='productall_child' key={i}>
