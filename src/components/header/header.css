@@ -24,8 +24,8 @@
     height: 40px;
     line-height: 24px;
     padding: 7px 8px;
-    color:white;
-    box-shadow: none;   
+    color: white;
+    box-shadow: none;
 }
 
 .header input:focus {
@@ -33,9 +33,11 @@
     border-color: #ffffff;
     outline: none;
 }
-.header input::placeholder{
+
+.header input::placeholder {
     color: #ffffff;
 }
+
 .header i {
     color: white;
 
@@ -45,14 +47,14 @@
     cursor: pointer;
     margin-left: 4px;
     color: white;
-    
+
 }
 
 .headdet:hover {
     transform: scale(1.2);
 }
 
-.headerresponce{
+.headerresponce {
     background: rgba(5, 9, 255, 0.5);
     text-align: center;
     padding: 10px 0px;
@@ -61,25 +63,28 @@
     left: 0;
     right: 0;
 }
-.headerresponce div{
-    color:#ffffff;
+
+.headerresponce div {
+    color: #ffffff;
 }
-.menuicon{
+
+.menuicon {
     display: none;
 }
 
 @media screen and (max-width:1000px) {
-    .menuicon{
+    .menuicon {
         display: block;
     }
-    .menuiconold{
+
+    .menuiconold {
         display: none;
     }
 }
 
 
 @media screen and (max-width:800px) {
-    .header input{
+    .header input {
         display: none;
     }
 }
