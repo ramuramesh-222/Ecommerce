@@ -13,7 +13,7 @@ function ProductsEdit() {
 
 
 // allproducts
-    useEffect(() => {
+    useEffect(() => {   
         fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
             .then(json => setEditproduct(json))

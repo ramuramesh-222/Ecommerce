@@ -25,7 +25,7 @@ function Categories() {
     return (
         <>
         
-            {categorielist.length > 0 ?<div className='d-flex justify-content-center gap-4 my-4 '>
+            {categorielist.length > 0 ?<div className='d-flex justify-content-center gap-4 my-4 categoriecartres'>
                 {categorielist.map((v, i) => {
                     return <Link key={i} className='linknavi' to={`/${v}`}>
                         <div className='categoriecart'>

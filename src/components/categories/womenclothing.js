@@ -22,11 +22,11 @@ function Womenclothing() {
         <>
             <div className='sm-nav'>
                 <ul>
-                    <li className='p-2'><Link to={'/productall'}>All Products</Link></li>
+                    <li className='p-2'><Link to={'/productall'}>All</Link></li>
                     <li className='p-2'><Link to={'/electronics'}>Electronics</Link></li>
                     <li className='p-2'><Link to={"/jewelery"}>Jewelery</Link></li>
-                    <li className='p-2'><Link to={"/men's clothing"}>Mens Cloth</Link></li>
-                    <li className='p-2'><Link to={"/women's clothing"}>WoMens Cloth</Link></li>
+                    <li className='p-2'><Link to={"/men's clothing"}>Mens</Link></li>
+                    <li className='p-2'><Link to={"/women's clothing"}>WoMens</Link></li>
 
                 </ul>
             </div>

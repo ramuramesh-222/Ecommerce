@@ -71,6 +71,27 @@
 
 }
 
+@media screen and (max-width:1064px) {
+    .input-res{
+        display: none;
+    }
+    .input-res-cont{
+        justify-content: center !important;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .inpu-vector {
+        display: none;
+    }
+    .inpu-form{
+        justify-content: center !important;
+        height: 60vh;
+    }
+    .inpu-form-val input{
+        width: 80vw;
+    }
+}
 
 
 

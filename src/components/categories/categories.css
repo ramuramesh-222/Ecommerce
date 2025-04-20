@@ -192,4 +192,34 @@
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     align-items: center;
 }
+@media screen and (max-width:630px) {
+    /* .categoriecart {
+        overflow: hidden;
+    } */
+    .categoriecartres{
+        /* background-color: #00ff0d;
+        overflow-x:scroll;
+        justify-content: start; */
+        width: 100%;
+        overflow-x: scroll;
+        justify-content: start !important;
+        scrollbar-width: none;
+    }
+    .categoriecartres p,hr{
+        display: none;
+    }
+}
 
+@media screen and (max-width:1300px){
+    .sm-nav{
+        width: 80%;
+    }
+    .sm-nav li{
+        font-size: small;
+    }
+}
+@media screen and (max-width:430px){
+    .sm-nav li{
+        font-size: x-small;
+    }
+}

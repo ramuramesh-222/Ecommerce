@@ -45,8 +45,8 @@ function Signup() {
   }
 
   return (
-    <div className='inpu-form'>
-      <div className='inpu-vector'>
+    <div className='inpu-form input-res-cont'>
+      <div className='inpu-vector input-res'>
         <img src={sopImg} className="vert-move" />
       </div>
       <div className='inpu-form-val'>
